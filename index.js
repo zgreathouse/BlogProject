@@ -7,9 +7,7 @@ const keys = require('./config/keys');
 require('./models/Post');
 require('./models/Comment');
 
-mongoose.connect(keys.mongoURI, {
-  useMongoClient: true
-});
+mongoose.connect(keys.mongoURI);
 
 //create instance of express
 const app = express();
