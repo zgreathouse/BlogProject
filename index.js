@@ -8,7 +8,8 @@ require('./models/Comment');
 //create instance of express
 const app = express();
 
-
+//routes
+require('./routes/postRoutes')(app);
 
 //dynamic port binding
 const PORT = process.env.PORT || 5000;
