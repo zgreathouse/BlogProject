@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Path = require('path-parser');
-const { URL } = require('url');
 
 const Post = mongoose.model('posts');
 
@@ -27,21 +26,22 @@ module.exports = app => {
 
   //create a new post in the database
   app.post('/api/posts', async (req, res) => {
-     const post = new Post({
-       title: req.body.title,
-       body: req.body.body,
-       imageURL: req.body.imageURL,
-       videoURL: req.body.videoURL,
-       datePosted: req.body.datePosted,
-       comments: []
-     });
+    const post = new Post({
+      title: req.body.title,
+      body: req.body.body,
+      imageURL: req.body.imageURL,
+      videoURL: req.body.videoURL,
+      datePosted: req.body.datePosted,
+      comments: []
+    });
 
-     try {
-       await post.save();
-       res.send("Post successfully created!");
-     } catch (err) {
-       res.status(422).send(err);
-     }
+    try {
+      await post.save();
+      res.send("Success!");
+    }
+    catch (err) {
+      res.status(422).send(err);
+    }
   });
 
   // Delete an existing post

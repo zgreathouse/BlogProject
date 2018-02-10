@@ -15,6 +15,7 @@ import reducers from './reducers';
 import axios from 'axios';
 window.axios = axios;
 
+//create redux store
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(

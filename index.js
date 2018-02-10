@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const keys = require('./config/keys');
 
@@ -11,6 +12,9 @@ mongoose.connect(keys.mongoURI);
 
 //create instance of express
 const app = express();
+
+//middlewares
+app.use(bodyParser.json());
 
 //routes
 require('./routes/postRoutes')(app);
