@@ -24,8 +24,6 @@ class PostIndex extends Component {
   }
 
   render() {
-    console.log(this.props.state);
-
     if(!this.props.posts) {
       return (
         <div></div>
