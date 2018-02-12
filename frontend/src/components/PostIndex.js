@@ -24,6 +24,8 @@ class PostIndex extends Component {
   }
 
   render() {
+    console.log(this.props.posts);
+
     if(!this.props.posts) {
       return (
         <div></div>
@@ -31,7 +33,8 @@ class PostIndex extends Component {
     }
 
     return (
-      <div>
+      <div className="container">
+        <h4 className="brand-logo">Blog</h4>
         <ul>
           {this.renderPosts()}
         </ul>
@@ -41,7 +44,7 @@ class PostIndex extends Component {
 }
 
 const mapStateToProps = state => ({
-  posts: state.posts,
+  posts: state.posts.data,
   state
 })
 

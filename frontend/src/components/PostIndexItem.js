@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostIndexItem = ({ post }) => {
   return (
@@ -6,13 +7,14 @@ const PostIndexItem = ({ post }) => {
       className="container left"
       style={{
         border: "solid black 1px",
-        margin: "0 5px 5px 5px",
+        margin: "0 10px 10px 10px",
         padding: "10px"
       }}
     >
       <p className="right">{post.date}</p>
-      <h5 style={{fontWeight: "bold"}}>{post.title}</h5>
-      <p style={{marginLeft: "1em"}}>{post.body}</p>
+      <Link to={`posts/${post._id}`}>
+        {post.title}
+      </Link>
     </div>
   )
 }
